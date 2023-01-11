@@ -66,4 +66,4 @@ def users():
 
 @app.route('/book', methods=['GET'])
 def tasks():
-    return render_template('classes.html', items=Item.query.all())
+    return render_template('book.html', items=book.query.all())
