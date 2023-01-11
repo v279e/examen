@@ -1,8 +1,5 @@
 from flask import Flask
 
-app = Flask(__name__)
+from werkzeug.security import check_password_hash, generate_password_hash
 
-
-@app.route('/')
-def hello():
-    return 'Hello, World!'
+print(generate_password_hash(user))
