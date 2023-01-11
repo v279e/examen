@@ -6,12 +6,14 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Имя</th>
+        <th scope="col">Название книги</th>
     </tr>
     </thead>
     <tbody>
     {%for user in users%}
     <tr>
-        <th scope="row">{{loop.index}}</th>
+        <th scope="row">{{user.index}}</th>
+        <th scope="row">{{user.login}}</th>
         <td>{{user.name}}</td>
     </tr>
     {%endfor%}
