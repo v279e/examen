@@ -13,8 +13,5 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(250), nullable=False)
     name = db.Column(db.String(100), nullable=False)
 
-    def set_password(self, password: str):
-        self.password = generate_password_hash(password)
-
     def check_password(self, password: str):
-        return check_password_hash(self.password, password)
+        return self.password == password
