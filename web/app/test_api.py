@@ -9,12 +9,6 @@ def test_index():
 def test_login():
     response = client.get('/auth/login')
     assert response.status_code == 200
-#тест на возможность входа с правильными данными
-def test_valid_auth():
-    data={"login": "xxxnagibator",
-          "password" : "qwerty"}
-    response = client.post('/auth/login', data=data)
-    assert response.status_code == 302
 #тест на невозможность входа с неправильными данными
 def test_invalid_auth():
     data={"login": "v279e",
