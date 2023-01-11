@@ -63,3 +63,7 @@ def calculate():
 def users():
     users = User.query.all()
     return render_template("users.html", users=users)
+
+@app.route('/book', methods=['GET'])
+def tasks():
+    return render_template('classes.html', items=Item.query.all())

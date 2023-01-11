@@ -14,7 +14,7 @@
             {% if title%}
             {{ title }}
             {% else %}
-            Library
+            Экзамен
             {% endif %}
         </title>
 </head>
@@ -43,7 +43,7 @@
                     <ul class="navbar-nav ms-auto pe-10 ">
                         {% if current_user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.endpoint == 'calculate' %}active{% endif %}" href="{{url_for('calculate')}}">Калькулятор</a>
+                            <a class="nav-link {% if request.endpoint == 'calculate' %}active{% endif %}" href="{{url_for('book')}}">Список книг</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.endpoint == 'users' %}active{% endif %}" href="{{url_for('users')}}">Покупки</a>
