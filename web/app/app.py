@@ -33,31 +33,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/calculate', methods=['GET', 'POST'])
-def calculate():
-    result = None
-    error_msg = None
-    if request.method == 'POST':
-        try:
-            operand1 = float(request.form.get('operand1'))
-            operand2 = float(request.form.get('operand2'))
-            operation = request.form.get('operation')
-            if operation == '+':
-                result = operand1 + operand2
-            elif operation == '-':
-                result = operand1 - operand2
-            elif operation == '/':
-                result = operand1 / operand2
-            elif operation == '*':
-                result = operand1 * operand2
-        except ValueError:
-            error_msg = 'Вводите только числа'
-        except ZeroDivisionError:
-            error_msg = 'На ноль делить нельзя'
-
-    response = make_response(render_template('calculate.html', result=result, error_msg=error_msg))
-    return response
-
 
 @app.route("/users")
 def users():
